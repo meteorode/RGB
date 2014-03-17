@@ -5,6 +5,7 @@ function HTMLActuator() {
   this.messageContainer = document.querySelector(".game-message");
 
   this.score = 0;
+  this._displayText = ['','\u24C7','\u24BC','\u24B7','\u24CE','\u24C5','\u24B8'];
 }
 
 HTMLActuator.prototype.actuate = function (grid, metadata) {
@@ -46,6 +47,11 @@ HTMLActuator.prototype.clearContainer = function (container) {
   }
 };
 
+HTMLActuator.prototype.displayText = function (value) {
+  return value > 20 ? '\u263b' : (value > 10 ? '\u25CF' : '\u25C9');
+  // return this._displayText[value % 10];
+}
+
 HTMLActuator.prototype.addTile = function (tile) {
   var self = this;
 
@@ -62,7 +68,7 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  inner.textContent = tile.value;
+  inner.textContent = self.displayText(tile.value);
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
