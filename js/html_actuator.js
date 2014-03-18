@@ -48,7 +48,7 @@ HTMLActuator.prototype.clearContainer = function (container) {
 };
 
 HTMLActuator.prototype.displayText = function (value) {
-  return value > 20 ? '\u263b' : (value > 10 ? '\u25CF' : '\u25C9');
+  return value > 20 ? '\u263a' : (value > 10 ? '\u25CF' : '\u25CE');
   // return this._displayText[value % 10];
 }
 
