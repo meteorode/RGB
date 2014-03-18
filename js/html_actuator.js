@@ -5,7 +5,6 @@ function HTMLActuator() {
   this.messageContainer = document.querySelector(".game-message");
 
   this.score = 0;
-  this._displayText = ['','\u24C7','\u24BC','\u24B7','\u24CE','\u24C5','\u24B8'];
 }
 
 HTMLActuator.prototype.actuate = function (grid, metadata) {
@@ -26,7 +25,7 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
     self.updateBestScore(metadata.bestScore);
 
     if (metadata.terminated) {
-      if (metadata.won) {
+      if (metadata.won && !metadata.keepPlaying) {
         self.message(true); // You win
       } else if (metadata.over) {
         self.message(false); // You lose
@@ -49,7 +48,6 @@ HTMLActuator.prototype.clearContainer = function (container) {
 
 HTMLActuator.prototype.displayText = function (value) {
   return value > 20 ? '\u263a' : (value > 10 ? '\u25CF' : '\u25CE');
-  // return this._displayText[value % 10];
 }
 
 HTMLActuator.prototype.addTile = function (tile) {
