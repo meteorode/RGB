@@ -141,9 +141,6 @@ GameManager.prototype.move = function (direction) {
           tile.updatePosition(positions.next);
 
           if (merged.value > 20) self.won = self.winning();
-          if (self.won && !self.keepPlaying) {
-            self.score += 1024; // Winning bonus
-          }
           
         } else {
           self.moveTile(tile, positions.farthest);
@@ -155,6 +152,10 @@ GameManager.prototype.move = function (direction) {
       }
     });
   });
+  
+  if (self.won && !self.keepPlaying) {
+    self.score += 1024; // Winning bonus
+  }
 
   if (moved) {
     this.addRandomTile(0);
