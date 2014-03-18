@@ -132,7 +132,7 @@ GameManager.prototype.move = function (direction) {
           merged.mergedFrom = [tile, next];
 
           // Update the score
-          self.score += self.mergeScore(merged.value, tile.value);
+          self.score += self.mergeScore(merged.value, tile.value) * (self.won ? 2 : 1);
 
           self.grid.insertTile(merged);
           self.grid.removeTile(tile);
@@ -188,7 +188,7 @@ GameManager.prototype.winning = function() {
 // Get whether tiles match
 GameManager.prototype.match = function(tileValue1, tileValue2) {
   if (Math.floor(tileValue1/10) != Math.floor(tileValue2/10)) return 0;
-  return (tileValue1 == tileValue2) || 
+  return (tileValue1 === tileValue2) || 
     ((tileValue1 % 10 <= 3) && (tileValue2 % 10 <=3) && (Math.floor(tileValue1/10)>0));
 }
 
