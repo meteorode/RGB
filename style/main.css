@@ -431,17 +431,23 @@ hr {
         font-size: 25px; } }
 
   .tile.tile-21 .tile-inner {  
-    color: #ee0000; }
+    color: #ffffff;
+    background: #ee0000; }
   .tile.tile-22 .tile-inner {  
-    color: #eeee00; }
+    color: #ffffff;
+    background: #eeee00; }
   .tile.tile-23 .tile-inner {  
-    color: #0000ee; }
+    color: #ffffff;
+    background: #0000ee; }
   .tile.tile-24 .tile-inner {  
-    color: #ff9900; }
+    color: #ffffff;
+    background: #ff9900; }
   .tile.tile-25 .tile-inner {  
-    color: #990099; }
+    color: #ffffff;
+    background: #990099; }
   .tile.tile-26 .tile-inner {  
-    color: #00ee00; }
+    color: #ffffff;
+    background: #00ee00; }
 
   .tile.tile-super .tile-inner {
     color: #f9f6f2;
